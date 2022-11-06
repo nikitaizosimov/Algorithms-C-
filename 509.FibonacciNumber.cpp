@@ -9,12 +9,10 @@ such that each number is the sum of the two preceding ones, starting from 0 and 
 */
 
 class Solution {
-
-//Recursion
 public:
-    int fibR(int n) {
+    int fib(int n) {
         if (n < 2) return n;
-        return fibR(n - 1) + fibR(n - 2);
+        return fib(n - 1) + fib(n - 2);
     }
 };
 
@@ -23,12 +21,12 @@ void test() {
     
     cout << "Tests start..." << endl;
 
-    assert(solution.fibR(-1) == -1);
-    assert(solution.fibR(0) == 0);
-    assert(solution.fibR(1) == 1);
-    assert(solution.fibR(4) == 3);
-    assert(solution.fibR(10) == 55);
-    assert(solution.fibR(31) == 1346269);
+    assert(solution.fib(-1) == -1);
+    assert(solution.fib(0) == 0);
+    assert(solution.fib(1) == 1);
+    assert(solution.fib(4) == 3);
+    assert(solution.fib(10) == 55);
+    assert(solution.fib(31) == 1346269);
     
     cout << "Tests correct!" << endl;
 }
