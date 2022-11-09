@@ -21,12 +21,18 @@ public:
             {'M', 1000},
         };
 
-        return 0;
-        // enum or dict для перевода char в цифру
-        // перечисление char в string
-        // добавлять в сумму только предыдущее значение, а текущее записывать
-        // после цикла добавлять остаток
-        // если текущие число больше предыдущего, то в предыдущее значение добавляем текущее - предыдущее
+        int sum = 0;
+        int prevNum = 0;
+
+        for (char c: s) {
+            int currentNum = romanConverter[c];
+
+            sum += currentNum > prevNum ? -prevNum : prevNum;
+
+            prevNum = currentNum;
+        }
+
+        return sum + prevNum;
     }
 };
 
